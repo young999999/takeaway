@@ -11,7 +11,7 @@
 <script>
   export default {
     props: {
-      title: String
+      title: String //在子组件中调用<HeaderTop title="昌平区北七家宏福科技园(337省道北)">
     },
   }
 </script>

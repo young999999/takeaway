@@ -1,14 +1,18 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <FooterGuide/>
+    <FooterGuide v-show="$route.meta.showFooter"/><!--判断当前路由的meta的showFooter的值-->
   </div>
 </template>
 
 <script>
   import FooterGuide from './components/FooterGuide/FooterGuide.vue'
+  import {reqFoodCategorys} from './api'
 
   export default {
+    async mounted(){
+      this.$store.dispatch('getAddress')
+    },
     components: {
       FooterGuide
     }
